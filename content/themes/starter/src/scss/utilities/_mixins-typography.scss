@@ -1,0 +1,135 @@
+/**
+ * SASS Mixins for Typography.
+ *
+ * @package HM Starter theme.
+ */
+
+/*
+ * Default font size & line-height for extra small text.
+ * Used for notices only.
+ */
+ @mixin extra-small-text {
+	font-size: $font-size-xs;
+	line-height: $line-height-xs;
+	font-weight: 400;
+}
+
+/*
+ * Default font size & line-height for small text.
+ */
+@mixin small-text {
+	font-size: $font-size-s;
+	line-height: $line-height-s;
+	font-weight: 400;
+}
+
+/*
+ * Default font size & line-height for text.
+ */
+@mixin default-text {
+	font-size: $font-size-m;
+	line-height: $line-height-m;
+	font-weight: 400;
+}
+
+/*
+ * Default font size & line-height for large text.
+ */
+@mixin large-text {
+	font-size: $font-size-l;
+	line-height: $line-height-l;
+	font-weight: 300;
+}
+
+/*
+ * Default font size & line-height for subheadings.
+ * Used for displaying categories in the hero of process pages only.
+ */
+@mixin subheading {
+	font-size: $font-size-m;
+	line-height: $line-height-m;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+/*
+ * Headings mixins.
+ *
+ * Used to combine font size and corresponding line height
+ * without having to repeat them if they're used on specific
+ * classes as well as the intended heading.
+ */
+@mixin heading-one() {
+	font-size: $font-size-xl;
+	line-height: $line-height-xl;
+	font-weight: 600;
+}
+
+@mixin heading-two() {
+	font-size: $font-size-xl;
+	line-height: $line-height-xl;
+	font-weight: 600;
+}
+
+@mixin heading-three() {
+	font-size: $font-size-l;
+	line-height: $line-height-l;
+	font-weight: 600;
+}
+
+/*
+ * Ideally these 3 should never be used as they are not part of the design,
+ * but they are options that are available in the core heading block and
+ * there is no easy way to remove those options. :(
+ */
+@mixin heading-four() {
+	font-size: $font-size-m;
+	line-height: $line-height-m;
+	font-weight: 600;
+}
+
+@mixin heading-five() {
+	font-size: $font-size-s;
+	line-height: $line-height-s;
+	font-weight: 600;
+}
+
+@mixin heading-six() {
+	font-size: $font-size-xs;
+	line-height: $line-height-xs;
+	font-weight: 600;
+}
+
+/**
+ * Quote Text Mixin.
+ *
+ * Expected Usage:
+ * @include quote-text;
+ */
+@mixin quote-text {
+	@include large-text;
+	margin-top: 0;
+	margin-bottom: 0;
+
+	&:first-child::before {
+		display: inline;
+		content: "“";
+	}
+
+	&:last-of-type::after {
+		display: inline;
+		content: "”";
+	}
+}
+
+/**
+ * Quote Citation Mixin.
+ *
+ * Expected Usage:
+ * @include quote-citation;
+ */
+@mixin quote-citation {
+	@include default-text;
+	font-style: normal;
+	display: inline-block;
+}

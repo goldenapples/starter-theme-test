@@ -1,0 +1,15 @@
+# 3rd-party code
+content/mu-plugins/asset-loader
+content/plugins/*
+
+# Dependencies
+node_modules
+vendor
+wordpress
+
+# Built files
+**/build/
+
+# Built Files
+content/mu-plugins/starter-blocks/build
+content/themes/starter/build

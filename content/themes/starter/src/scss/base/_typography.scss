@@ -1,0 +1,41 @@
+/**
+ * Basic Typography.
+ *
+ * @package HM Starter theme.
+ */
+
+ h1 {
+	@include heading-one;
+	color: $color-heading;
+}
+
+h2 {
+	@include heading-two;
+	color: $color-heading;
+}
+
+h3 {
+	@include heading-three;
+	color: $color-heading;
+}
+
+h4 {
+	@include heading-four;
+	color: $color-heading;
+}
+
+h5 {
+	@include heading-five;
+	color: $color-heading;
+}
+
+h6 {
+	@include heading-six;
+	color: $color-heading;
+}
+
+p,
+li {
+	@include default-text;
+	color: $color-text;
+}

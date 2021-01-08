@@ -1,0 +1,59 @@
+{
+  "name": "altis/skeleton",
+  "description": "A base Altis project to get started with",
+  "type": "project",
+  "require": {
+    "altis/altis": "^5.0.0",
+    "humanmade/asset-loader": "^0.4.1"
+  },
+  "require-dev": {
+    "altis/local-chassis": "^5.0.0",
+    "altis/local-server": "^5.0.0",
+    "humanmade/coding-standards": "^1.1"
+  },
+  "authors": [
+    {
+      "name": "Human Made",
+      "email": "hello@humanmade.com"
+    }
+  ],
+  "extra": {
+    "altis": {
+      "modules": {
+        "analytics": {
+          "enabled": false
+        }
+      },
+      "environments": {
+        "local": {
+          "modules": {
+            "security": {
+              "browser": false
+            }
+          }
+        }
+      }
+    },
+    "installer-paths": {
+      "content/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin",
+        "humanmade/asset-loader"
+      ],
+      "content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "content/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    }
+  },
+  "config": {
+    "platform": {
+      "php": "7.2",
+      "ext-mbstring": "7.2.30"
+    }
+  },
+  "scripts": {
+    "phpcs": "phpcs --standard=vendor/humanmade/coding-standards ."
+  }
+}

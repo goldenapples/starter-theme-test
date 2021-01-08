@@ -1,0 +1,8 @@
+.bin
+.config
+.tests/*
+vendor
+wordpress
+
+content/plugins
+content/mu-plugins/asset-loader

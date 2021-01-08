@@ -1,0 +1,183 @@
+/**
+ * Default SASS Variables used throughout the theme.
+ *
+ * @package HM Starter theme.
+ */
+
+/**
+ * Table of contents.
+ * ------------------
+ *
+ * 1. Colors
+ * 2. Typography.
+ * 3. Gutters.
+ * 4. Containers & Layout.
+ * 5. Z-index values.
+ * 6. Animation.
+ *
+ * ------------------
+ */
+
+
+/**
+ * 1. Colors
+ * ------------------
+ * Color variables involve a two-tier system to keep colors in sync. The
+ *    first tier defines the brand and neutral colors, and the second tier
+ *    defines the application of those colors.
+ */
+
+/**
+ * Brand Colors
+ *
+ * Brand color variables use English names to define colors to make palettes easier to identify.
+ */
+
+ /**
+  * Neutral Colors
+  */
+ $color-white: #FFFFFF;
+ $color-neutral-gray: #EDEDED;
+ $color-gray: #D5D5D5;
+ $color-light-gray: #f5f5f5;
+ $color-charcoal: #474747;
+ $color-off-black: #222222;
+ $color-black: #000000;
+ $color-black-50-alpha: rgba(0,0,0,0.5);
+
+ /**
+  * Utility Colors
+  *
+  * Utility colors are colors used to provide feedback, such as alert messages,
+  *    form validation, etc.
+  */
+ $color-utility-positive: #03804d;
+ $color-utility-postitive-subtle: #d4f3e6;
+ $color-utility-caution: #a59b15;
+ $color-utility-caution-subtle: #fffecf;
+ $color-utility-negative: #b12a0b;
+ $color-utility-negative-subtle: #fdded8;
+ $color-utility-neutral: #0192d0;
+ $color-utility-neutral-subtle: #d3f2ff;
+
+ /**
+  * Text Colors
+  *
+  * These are non-linked text colors, such as body copy.
+  */
+ $color-text: $color-off-black;
+
+ $color-min-gray: #767676; // lightest grey that validates for WCAG 2 AA against a white background
+
+ /**
+  * Heading Colors
+  *
+  * These are non-linked heading colors, such as h2, h3, etc.
+  */
+ $color-heading: $color-off-black;
+
+/*
+ * Background color
+ */
+$color-bg: $color-white;
+
+ /**
+  * Text Link Colors
+  *
+  * These are for linked text, such as a link found within an article,
+  *    navigation link, footer link, etc.
+  */
+
+ /**
+  * Button Colors
+  */
+
+/**
+ * 2. Typography
+ * ------------------
+ * Each font size has a corresponding line-height.
+ * For example, the default usage would be:
+ * $font-size-xxl & $line-height-xxl.
+ */
+
+$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
+$font-size-xxl: px-to-rem( 68 );
+$font-size-xl: px-to-rem( 32 );
+$font-size-l: px-to-rem( 20 );
+$font-size-m: px-to-rem( 16 );
+$font-size-s: px-to-rem( 14 );
+$font-size-xs: px-to-rem( 12 ); // Used for extra small notices only.
+
+$line-height-xxl: line-height( 68px, 74px );
+$line-height-xl: line-height( 32px, 38px );
+$line-height-l: line-height( 20px, 26px );
+$line-height-m: line-height( 16px, 24px );
+$line-height-s: line-height( 14px, 20px );
+$line-height-xs: line-height( 12px, 20px );
+
+/**
+ * 3. Gutters and Spacing
+ * ------------------
+ * rem units used in relation to text.
+ * em units used in relation to layout.
+ *
+ * Using spacing.
+ * All spacing used in the site should be increments of $spacing-xx.
+ * To use larger spacing always multiply by $spacing-xx.
+ * For example: $text-gutter: calc( $spacing-rem * 4 );
+ */
+$spacing-em: px-to-em( 15 );
+$spacing-rem: px-to-rem( 15 );
+
+/**
+ * 4. Container widths & layout
+ * ------------------
+ * em units should be used for all layout spacing.
+ */
+
+ /**
+ * The max-width of most content within containers.
+ */
+$content-width-sm: px-to-rem( 700 );
+$content-width-med: px-to-rem( 900 );
+$content-width-large: px-to-rem( 1200 );
+$content-width-max: px-to-rem( 1400 );
+
+/**
+ * Admin bar sizes.
+ */
+$adminbar-height-mobile: px-to-em( 46 );
+$adminbar-height-desktop: px-to-em( 32 );
+
+/**
+ * 5. Z-index values.
+ * ------------------
+ * A range of z-index values used so each stacked item
+ * can be calculated in relation to other values.
+ *
+ * When adding layers, group by stacking context.
+ */
+
+$z-layers: (
+	/*
+	 * Body stacking context.
+	 */
+	".screen-reader-text": 100000, /* Above WP toolbar. */
+);
+
+/**
+ * 6. Animation
+ */
+
+/**
+ * Animation Duration
+ */
+$anim-speed-quick: 200ms;
+$anim-speed-slow: 1000ms;
+$anim-speed-xslow: 2000ms;
+
+/**
+ * Animation Easing
+ */
+$anim-ease: ease;

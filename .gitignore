@@ -1,0 +1,19 @@
+# Altis
+/wordpress
+/index.php
+/wp-config.php
+/chassis
+/node_modules
+/package-lock.json
+/vendor
+/content/uploads
+
+# Composer-managed dependencies
+/content/mu-plugins/asset-loader
+
+# Per-machine
+/.config/local-config.php
+
+# Built files
+/content/mu-plugins/starter-blocks/build
+/content/themes/starter/build

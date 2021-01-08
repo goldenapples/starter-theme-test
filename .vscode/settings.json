@@ -1,0 +1,23 @@
+{
+	"search.exclude": {
+		"**/*.lock": true,
+		"**/*.min.css": true,
+		"**/*.min.js": true,
+		"**/build/**/*.css": true,
+		"**/build/**/*.js": true,
+		"**/content/plugins/**": true,
+		"**/wordpress/**": true
+	},
+	"files.watcherExclude": {
+		"**/build/**/*.css": true,
+		"**/build/**/*.js": true,
+		"**/content/plugins/**": true,
+		"**/mu-plugins/asset-loader/**": true,
+		"**/wordpress/**": true
+	},
+	"files.exclude": {
+		"**/*.lock": true,
+		"package-lock.json": true,
+		"composer.lock": true
+	}
+}

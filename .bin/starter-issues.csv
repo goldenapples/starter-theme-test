@@ -1,0 +1,35 @@
+Title,Tags,Milestone,User Story,Description
+Style utilities,Frontend,,"As an enginer building the theme
+I want to be able to access styles for brand typography and colors
+So I can write maintainable code for markup and styling","Create utilities for styling typography, brand colors, responsive breakpoints, and more according to the provided designs."
+Theme Header,Frontend,,"As a visitor
+I want to see a consistent header on every page
+So that I can know where I am on the site and navigate easily",
+Header Navigation,Frontend,,"As a visitor on mobile or desktop devices
+I want to be able to access all navigation links in menus
+To find my way around the site
+
+As a site administrator
+I want the process of updating navigation to be easily understandable
+So that I can add and remove nav items at will",
+Theme Footer,Frontend,,"As a visitor
+I want to see a consistent footer on every page
+so that I can easily navigate to specific sections/pages",
+Page template,Frontend,,"As an editor
+I want to be able to create new pages that are beautiful
+So that I can create content without needing development support",Block creation and styling will be handled in other tickets. This ticket will include theme setup for a generic page and some foundational styles.
+Post template,Frontend,,"As an editor
+I want to be able to create new posts that are beautiful
+So that I can create content without needing development support",Block creation and styling will be handled in other tickets. This ticket will include theme setup for a generic page and some foundational styles.
+Content styles,Frontend,,"As a content creator
+I want post content to look as expected in the editor and the front end
+So that creating content is simple and intuitive ","This includes creating styles for all the default blocks enabled on the site, and ensuring they're built into the editor stylesheet for WYSIWYG editing."
+Home Page template,Frontend,,"As an editor
+I want to be able to easily update the home page without needing development support
+So that I can feature content that is different from any other part of the site",
+Archive page templates,Frontend,,"As a visitor 
+I want to be able to view content archives by content type
+So that I can find more articles related to my interests","Generic templates for archive pages (category & tag pages). May be all that's required for these templates, or a separate issue may be required to style specific archives"
+Comments template,Frontend,,"As a site visitor
+I want comments to be styled consistantly and readably
+So that user conversation can add to the published content",

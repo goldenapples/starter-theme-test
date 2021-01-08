@@ -1,0 +1,17 @@
+/**
+ * Default theme alignments.
+ *
+ * @package HM Starter Theme.
+ */
+
+.alignleft {
+	@include align( left );
+}
+
+.alignright {
+	@include align( right );
+}
+
+.aligncenter {
+	@include align( center );
+}

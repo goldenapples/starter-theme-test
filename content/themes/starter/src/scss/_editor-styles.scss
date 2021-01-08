@@ -1,0 +1,37 @@
+/**
+ * Main file for importing SCSS into the editor.
+ *
+ * @package HM Starter Theme.
+ */
+
+/**
+ * Start with the variables.
+ */
+@import "utilities/index";
+
+/**
+ * BASE styles.
+ *
+ * Typically applied using element selectors, the styles in these
+ * files are applied globally.
+ */
+@import "base/index";
+
+/**
+ * Component styles.
+ *
+ * Styles for each individual componenet. Should only use
+ * class selectors.
+ */
+@import "components/index";
+
+/**
+ * Block styles.
+ *
+ * Styles used for the WP Block editor/Gutenberg.
+ *
+ * Due to the high specificity required for some blocks, these
+ * are listed out of alphabetical order when importing the code in
+ * to the main stylesheet.
+ */
+@import "blocks/index";

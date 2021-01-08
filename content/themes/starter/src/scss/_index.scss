@@ -1,0 +1,61 @@
+/**
+ * Main file for importing SCSS into the theme.
+ *
+ * @package HM Starter Theme.
+ */
+
+/**
+ * Vendor files that are order dependant.
+ */
+
+
+/**
+ * Utilities.
+ *
+ * Functions, Mixins, Variables and custom properties required to
+ * achieve styles.
+ */
+@import "utilities/index";
+
+/**
+ * BASE styles.
+ *
+ * Typically applied using element selectors, the styles in these
+ * files are applied globally.
+ */
+@import "base/index";
+
+/**
+ * Component styles.
+ *
+ * Styles for each individual componenet. Should only use
+ * class selectors.
+ */
+@import "components/index";
+
+/**
+ * Page styles.
+ *
+ * Styles specific to a page / section layout. For example: Archive, Home.
+ * Should only use class selectors.
+ */
+
+/**
+ * Vendor files.
+ *
+ * Put vendor files here unless they are order dependent.
+ */
+
+/**
+ * Block styles.
+ *
+ * Styles used for the WP Block editor/Gutenberg.
+ */
+@import "blocks/index";
+
+/**
+ * Shame file.
+ *
+ * Include shame file at the end so that all styles here are last in cascade.
+ */
+@import "shame";

@@ -1,0 +1,13 @@
+{
+	"extends": "@humanmade/stylelint-config",
+	"plugins": [
+		"stylelint-order"
+	],
+	"rules": {
+		"color-no-hex": true,
+		"max-nesting-depth": [ 2, {
+			"ignore": [ "blockless-at-rules", "pseudo-classes" ]
+		} ],
+		"order/properties-alphabetical-order": true
+	}
+}

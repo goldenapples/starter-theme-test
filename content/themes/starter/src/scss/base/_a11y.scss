@@ -1,0 +1,48 @@
+/**
+ * Accessibility styles.
+ *
+ * @package HM Starter Theme.
+ */
+
+/**
+ * Completely remove from the flow and screen readers.
+ */
+ .is-hidden {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+/**
+ * Hide text from vision that is useful only for screen readers users.
+ * See https://make.wordpress.org/accessibility/handbook/best-practices/markup/the-css-class-screen-reader-text/
+ */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+
+	// Reveal text on keyboard focus (eg skiplinks)
+	&:focus {
+		background-color: #eee;
+		clip: auto !important;
+		clip-path: none;
+		color: #444;
+		display: block;
+		font-size: 1em;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: z-index( ".screen-reader-text" )
+	}
+}

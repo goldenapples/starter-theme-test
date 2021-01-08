@@ -1,0 +1,172 @@
+/**
+ * General SASS Functions.
+ *
+ * @package HM Starter theme.
+ *
+ * Notes:
+ *`$base-rem` needs to be defined first in this file to allow
+ * other variables to use mixins relying on the value.
+ *
+ * `$base-em` is defined in this file because it needs to have
+ * a value before the variables file is included to allow the
+ * unit conversions to be used in the variables file.
+ */
+ $base-rem: 16px; // Helper for a single rem.
+ $base-em: 16px; // Provides default context for px-to-em.
+
+/**
+ * Generic clearfix helper.
+ *
+ * Usage: @include clearfix;
+ */
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+/**
+ * Alignment
+ *
+ * Mixin to handle alignment in various directions. Handles mobile styles.
+ *
+ * @param  {string} $direction: left, right or center.
+ *
+ * Usage: @include align( left );
+ * Usage: @include align( right );
+ * Usage: @include align( center );
+ */
+@mixin align( $direction: left ) {
+	float: none;
+	display: block;
+	clear: both;
+	margin: 0 auto 1.5em;
+
+	@media screen and ( min-width: 720 ) { // todo: fix this min width; replace with variable.
+		@if #{$direction} == left {
+			display: inline;
+			float: #{$direction};
+			margin-right: 1.5em;
+			margin-bottom: 1em;
+		} @else if #{$direction} == right {
+			display: inline;
+			float: #{$direction};
+			margin-left: 1.5em;
+			margin-bottom: 1em;
+		}
+	}
+}
+
+/**
+ * Body text
+ *
+ * Default body text styles.
+ */
+@mixin body-text {
+	font-family: $font-family;
+	font-style: normal;
+	color: $color-text;
+	// Smooth out font weights and display cross-browser.
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+}
+
+/*
+ * z-index key.
+ * Sass map is created in _variables.scss which should have a class name and
+ * corresponding z-index added each time a z-index is used.
+ *
+ * @param $key String the class name for a specific z-index value.
+ */
+@function z-index( $key ) {
+	@if map-has-key( $z-layers, $key ) {
+		@return map-get( $z-layers, $key );
+	}
+
+	@error "Error: Specified z-index `#{$key}` does not exist in the mapping";
+}
+
+/**
+ * Strip the unit from a size value.
+ *
+ * @param $number Value from which to remove unit.
+ */
+@function strip-unit( $number ) {
+	@if type-of( $number ) == 'number' and not unitless( $number ) {
+		@return $number / ( $number * 0 + 1 );
+	}
+	@return $number;
+}
+
+/**
+ * Convert a pixel size to rems.
+ *
+ * The base pixel size uses the value of `$base-rem` defined
+ * above.
+ *
+ * @param $size-pixels string Size in pixels, eg `12px`.
+ *
+ * @return string Size in rem, eg 0.75rem.
+ */
+@function px-to-rem( $size-pixels ) {
+	@return ( ( $size-pixels * 1px ) / $base-rem ) * 1rem;
+}
+
+/*
+ * px to em conversion.
+ *
+ * Expected Usage:
+ * @include px-to-em(32); 32 is desired px size when using browser default base font size.
+ * @include px-to-em(32, 12); 32 is desired px size if base font size is 12.
+ *
+ * @param  $target Number/String Pixel target.
+ * @param  $context Number/String Current context.
+ *
+ * @return String Em value.
+ */
+@function px-to-em( $target, $context: $base-em ) {
+	$target: strip-unit( $target ) / strip-unit( $context ) * 1em;
+
+	@return $target;
+}
+
+/**
+ * General container mixin.
+ * Used in the header and footer.
+ *
+ * Expected Usage:
+ * @include container;
+ */
+@mixin container {
+	width: 100%;
+	max-width: $content-width-max;
+	margin: 0 auto;
+	padding: 0 px-to-em( 20 );
+
+	/**
+	 * Custom breakpoint to ensure padding is not removed at 1400px because the max-width
+	 * of the container is also 1400px. If we remove the padding at 1400px there would be
+	 * screen sizes between 1400px and 1440px where the content is too close to the edge
+	 * of the screen.
+	 */
+	@media ( min-width: px-to-em( 1440 ) ) {
+		padding: 0;
+	}
+}
+
+/**
+ * Some general styles for form fields abstracted out for re-use.
+ *
+ * Expected Usage:
+ *	@include form-fields;
+ */
+@mixin form-fields {
+	@include default-text;
+	border: 1px solid $color-off-black;
+	border-radius: 5px;
+	padding: px-to-em( 15 );
+}

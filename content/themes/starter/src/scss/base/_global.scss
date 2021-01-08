@@ -1,0 +1,35 @@
+/**
+ * Global styles.
+ *
+ * @package HM Starter Theme.
+ */
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+blockquote {
+	margin: 0;
+}
+
+body {
+	@include body-text;
+	background-color: $color-bg;
+	overflow-x: hidden;
+}
+
+input,
+textarea {
+	@include form-fields;
+}

@@ -1,0 +1,30 @@
+/**
+ * Styles for a tabbed layout block.
+ *
+ * @package HM Starter Theme.
+ */
+
+.tabbed-nav-list {
+	border-bottom: 2px solid rgba( 0, 0, 0, 0.3 );
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+
+	body:not(.wp-admin) & {
+		display: none;
+	}
+
+	li {
+		list-style: none;
+		margin: 0 0 0 1.5em;
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+.tabbed-content.hidden {
+	display: none;
+}
